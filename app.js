@@ -107,7 +107,8 @@ async function handleGETRequest(req, res) {
       res.writeHead(403, { "Content-Type": "application/json" });
       return res.end(
         JSON.stringify({
-          message: "Query not allowed. Only SELECT queries are permitted.",
+          message:
+            "Query not allowed. Only SELECT and INSERT queries are permitted.",
         })
       );
     }

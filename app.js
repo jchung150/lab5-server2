@@ -20,7 +20,10 @@ const dbConfig = {
   database: "patientDB",
 };
 
-const ALLOWED_ORIGIN = "*";
+const ALLOWED_ORIGIN = [
+  "https://comp5437lab05.netlify.app",
+  "https://potipress.com",
+];
 
 const pool = mysql.createPool(dbConfig);
 

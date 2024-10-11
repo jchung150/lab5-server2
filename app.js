@@ -20,7 +20,7 @@ const dbConfig = {
   database: "patientDB",
 };
 
-const ALLOWED_ORIGIN = "https://comp5437lab05.netlify.app";
+const ALLOWED_ORIGIN = "*";
 
 const pool = mysql.createPool(dbConfig);
 
@@ -191,6 +191,6 @@ async function handlePOSTRequest(req, res) {
 initializeDatabase().then(() => {
   const PORT = process.env.PORT || 3555;
   server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port https://potipress.com:${PORT}`);
   });
 });

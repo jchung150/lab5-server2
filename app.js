@@ -20,7 +20,7 @@ const dbConfig = {
   database: "patientDB",
 };
 
-const ALLOWED_ORIGIN = "http://127.0.0.1:5500";
+const ALLOWED_ORIGIN = "https://comp5437lab05.netlify.app";
 
 const pool = mysql.createPool(dbConfig);
 

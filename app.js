@@ -20,7 +20,7 @@ const dbConfig = {
   database: "patientDB",
 };
 
-const ALLOWED_ORIGIN = [
+const ALLOWED_ORIGINS = [
   "https://comp5437lab05.netlify.app",
   "https://potipress.com",
 ];
@@ -58,8 +58,11 @@ async function initializeDatabase() {
 
 // Create the server
 const server = http.createServer(async (req, res) => {
+  const origin = req.headers.origin;
+  if (ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   // Add CORS headers to all responses
-  res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 

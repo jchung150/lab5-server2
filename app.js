@@ -189,7 +189,7 @@ async function handlePOSTRequest(req, res) {
 }
 
 initializeDatabase().then(() => {
-  const PORT = process.env.PORT || 3002;
+  const PORT = process.env.PORT || 3555;
   server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
